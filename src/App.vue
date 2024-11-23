@@ -3,7 +3,7 @@
   <div class="container">
     <div class="title"></div>
     <div class="menu">
-      <a v-for="{ name, link } of menus" class="item" :href="goto(link)">
+      <a v-for="{ name, link } of menus" class="item" :href="goto(link)" :key="link">
         {{ name }}
       </a>
     </div>
@@ -18,7 +18,7 @@ type MenuItem = {
 
 const menus: MenuItem[] = [
   { name: "Code Server", link: ":3031" },
-  { name: "文件管理", link: ":3032" },
+  { name: "文件管理", link: "/file_mange" },
   { name: "聊天室", link: ":3033" },
 ];
 
@@ -60,6 +60,7 @@ const goto = (link: string) => {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .item {
       width: 10rem;
       margin: 1rem;
@@ -71,11 +72,13 @@ const goto = (link: string) => {
       text-decoration: none;
       background: rgba(255, 255, 255, 0.3);
       cursor: pointer;
+
       &:hover {
         transition: all 0.25s;
         background: rgba(255, 255, 255, 0.4);
       }
     }
+
     /* justify-content: center; */
   }
 }

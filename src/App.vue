@@ -18,7 +18,7 @@ type MenuItem = {
 
 const menus: MenuItem[] = [
   { name: "Code Server", link: ":3031" },
-  { name: "文件管理", link: "/file_mange" },
+  { name: "文件管理", link: "/file_manage" },
   { name: "聊天室", link: ":3033" },
 ];
 
